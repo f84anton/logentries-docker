@@ -11,7 +11,8 @@ RUN \
  apt-get update -qq && \
  apt-get install python-setproctitle logentries tzdata locales -yq && \
  localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF-8 && \
- rm -rf rm -r /var/lib/apt/lists/* 
+ mkdir -p /etc/le && \
+ rm -rf /var/lib/apt/lists/*
 
 
 COPY entrypoint.sh /
